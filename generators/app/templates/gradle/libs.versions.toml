@@ -4,10 +4,32 @@
 [versions]
 guava = "33.2.1-jre"
 junit-jupiter = "5.10.3"
+androidApplication = "8.7.3"
+androidLibrary = "8.7.3"
+kotlinAndroid = "1.9.24"
+kotlinComposeCompiler = "1.5.14"
+androidComposeBom = "2024.12.01"
+androidActivityCompose = "1.9.3"
+androidCoreKts = "1.13.1"
+
+
 
 [libraries]
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
+android-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidComposeBom" }
+android-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidActivityCompose" }
+android-compose-material = { group = "androidx.compose.material3", name = "material3" }
+android-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+android-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+android-compose-ui-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+android-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidCoreKts" }
+android-compose-ui-test = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+android-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.0.20" }
+android_application = { id = "com.android.application", version.ref = "androidApplication" }
+android_library = { id = "com.android.library", version.ref = "androidLibrary" }
+kotlin_android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinAndroid" }

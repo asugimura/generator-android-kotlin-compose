@@ -18,12 +18,12 @@ plugins {
 
 android {
     namespace = "<%= packageName %>"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "<%= packageName %>"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -57,7 +57,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.7"
+        kotlinCompilerExtensionVersion = libs.versions.kotlinComposeCompiler.get()
     }
 
     packaging {
@@ -68,14 +68,14 @@ android {
 }
 
 dependencies {
-    implementation(platform("androidx.compose:compose-bom:2023.06.00"))
-    implementation("androidx.activity:activity-compose:1.7.2")
-    implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.core:core-ktx:1.10.1")
+    implementation(platform(libs.android.compose.bom))
+    implementation(libs.android.activity.compose)
+    implementation(libs.android.compose.material)
+    implementation(libs.android.compose.ui)
+    implementation(libs.android.compose.ui.graphics)
+    implementation(libs.android.compose.ui.preview)
+    implementation(libs.android.core.ktx)
 
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
-    debugImplementation("androidx.compose.ui:ui-tooling")
+    debugImplementation(libs.android.compose.ui.test)
+    debugImplementation(libs.android.compose.ui.tooling)
 }
